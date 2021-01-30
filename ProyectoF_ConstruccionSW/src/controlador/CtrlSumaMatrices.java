@@ -18,7 +18,8 @@ import vista.VistaOperaciones;
 
 /**
  *
- * @author Iván Aguilar
+ * @author Los chidos
+ * Esto es una prueba
  */
 public final class CtrlSumaMatrices implements ActionListener {
 
