@@ -73,5 +73,11 @@ public class CtrlVistaPrincipal implements ActionListener {
             CtrlVistaOperaciones cvo = new CtrlVistaOperaciones(vo, vp);
             vo.setVisible(true);
         }
+        if (vp.getjComboBoxOperaciones().getSelectedItem().equals("Sistema de ecuaciones por Cramer")) {
+            vo = new VistaOperaciones();
+            CtrlEcuacionesCramer cdm = new CtrlEcuacionesCramer(vo);
+            CtrlVistaOperaciones cvo = new CtrlVistaOperaciones(vo, vp);
+            vo.setVisible(true);
+        }
     }
 }
