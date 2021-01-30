@@ -63,6 +63,10 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         vo.getjLabeMatrizB().setText("");
     }
     
+    /*
+     * Este método genera la matriz que el usuario llenará para calcular la determinante.
+     * Una vez establecidas las dimensiones de la matriz, aparecerán las celdas que el usuario deberá llenar con números.
+    */
     public void generarMatrices() {  
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -80,11 +84,17 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         }
     }
     
+    /*
+     * Este método vacía el contenido de todas las celdas de la matriz generada. Y elimina cualquier valor almacenado en la matriz.
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
     }
     
+    /*
+     * Este metodo 
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -95,12 +105,20 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         }
     }
     
+    /*
+     * Este método imprime la determinante resultante de la matriz ingresada por el usuario, convierte el valor a String
+     * @param determinanteResultante un número de tipo double
+    */
     public void imprimirResultado(double determinanteResultante) {
         String strDeterminante = String.valueOf(determinanteResultante);
         JOptionPane.showMessageDialog(vo, "El determinante es igual a: " + strDeterminante);
         vo.getjTextAreaResultado().setText(strDeterminante);
     }
     
+    /*
+     * Este método realiza el cálculo de la determinante
+     * @return determinanteResultante El resultado de tipo double
+    */
     public double resolverDeterminante() {     
         double[][] matrizA = new double[filas][columnas];
         int i = 0, j = 0;
