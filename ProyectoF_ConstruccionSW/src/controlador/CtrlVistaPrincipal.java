@@ -13,7 +13,7 @@ import vista.VistaPrincipal;
 
 /**
  *
- * @author Iván Aguilar
+ * @author lol
  */
 public class CtrlVistaPrincipal implements ActionListener {
 
