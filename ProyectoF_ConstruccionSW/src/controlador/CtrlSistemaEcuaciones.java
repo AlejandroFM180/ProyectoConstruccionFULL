@@ -17,8 +17,8 @@ import modelo.SistemaEcuaciones;
 import vista.VistaOperaciones;
 
 /**
- *
- * @author Iván Aguilar
+ * Esta clase es el controlador de Sistema de Ecuaciones 
+ * @author Victor, Montserrat y Jafet
  */
 public final class CtrlSistemaEcuaciones implements ActionListener {
 
