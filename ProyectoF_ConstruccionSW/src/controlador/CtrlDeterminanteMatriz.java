@@ -18,13 +18,16 @@ import vista.VistaOperaciones;
 
 /**
  * Clase controladora de DeterminanteMatriz
- * @author 
+ * @author Jafet, Victor y Montserrat
  */
 public class CtrlDeterminanteMatriz implements ActionListener {
     private VistaOperaciones vo;
     private List<JTextField> valoresDeMatrizA;
     private int filas, columnas;
 
+    /*
+     * Funcion del controlador determinante matriz
+    */
     public CtrlDeterminanteMatriz(VistaOperaciones vo) {
         this.vo = vo;
         
@@ -36,7 +39,12 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         vo.getjButtonResolver().addActionListener(this);
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
-
+    
+    /*
+     * Este método llama al metodo generar matrices cuando se presiona el boton "Generar matrices".
+     * Tambien realiza el calculo de la determinante al presionar el boton, pero si se ingresa información inválida (no se llenan todas las celdas o se ingresan caracteres en
+     * lugar de números) se creará una excepción.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -55,6 +63,10 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         }
     }
     
+    /*
+     * Este método adapta el diseño de la vista, poniendo el nombre de la operacion en la ventana y quitando visibilidad a la
+     * matriz B, ya que no será necesaria para esta operación.
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("DETERMINANTE DE UNA MATRIZ");
         vo.getColumnasMatrizA().setVisible(false);
@@ -63,6 +75,9 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         vo.getjLabeMatrizB().setText("");
     }
     
+    /*
+     * Este método genera la matriz  de las dimensiones especificadas por el usuario que se llenara para calcular el determinante.
+    */
     public void generarMatrices() {  
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -88,6 +103,9 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         valoresDeMatrizA.clear();
     }
     
+    /*
+     * Este método obtiene los valores e las filas y las columnas de la matriz
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -98,12 +116,19 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         }
     }
     
+    /*
+     * Este método imprime el determinante de la matriz. Toma el valor de determinante
+    */
     public void imprimirResultado(double determinanteResultante) {
         String strDeterminante = String.valueOf(determinanteResultante);
         JOptionPane.showMessageDialog(vo, "El determinante es igual a: " + strDeterminante);
         vo.getjTextAreaResultado().setText(strDeterminante);
     }
     
+    /*
+     * Este método realiza el calculo de la determinante de la matriz
+     * @return determinanteResultante número de tipo double
+    */
     public double resolverDeterminante() {     
         double[][] matrizA = new double[filas][columnas];
         int i = 0, j = 0;

@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author 
+ * @author Victor, Jafet y Montserrat
  */
 public class VistaOperaciones extends javax.swing.JFrame {
 
