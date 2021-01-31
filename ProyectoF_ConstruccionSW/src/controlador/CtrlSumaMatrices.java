@@ -17,16 +17,20 @@ import modelo.SumaMatrices;
 import vista.VistaOperaciones;
 
 /**
- *
- * @author Los chidos
- * Esto es una prueba
+ * Esta clase es el controlador de Suma de matrices
+ * @author Victor, Jafet y Montserrat
+ * @version 1.3
  */
 public final class CtrlSumaMatrices implements ActionListener {
-
     private VistaOperaciones vo;
     private List<JTextField> valoresDeMatrizA, valoresDeMatrizB;
     private int filas, columnas;
 
+    /*
+    * Adapta el título de la vista de operaciones con la operación de suma de matrices, inicializa
+    * las matrices que llenará el usuario para realizar la suma. Tambien tiene listeners en los botones de la vista.
+    * @param vo El JFrame correspondiente a la vista de operaciones.
+    */
     public CtrlSumaMatrices(VistaOperaciones vo) {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
@@ -39,6 +43,10 @@ public final class CtrlSumaMatrices implements ActionListener {
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
 
+    /*
+    * Este método genera las matrices para realizar la suma cuando se presiona el botón de Generar matrices.
+    * Si se ingresan datos incorrectos (numeros o quedan espacios vacios), aparecera un mensaje de error.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -57,12 +65,18 @@ public final class CtrlSumaMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Cambia el título de la vista a "Suma de matrices"
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("SUMA DE MATRICES");
         vo.getColumnasMatrizB().setVisible(false);
         vo.getFilasMatrizB().setVisible(false);
     }
 
+    /*
+     * Genera los paneles de ambas matrices dependiendo de las dimensiones establecidas por el usuario.
+    */
     public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -88,6 +102,9 @@ public final class CtrlSumaMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Vacía las celdas llenadas por el usuario y elimina los valores almacenados en las matrices
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
@@ -95,6 +112,9 @@ public final class CtrlSumaMatrices implements ActionListener {
         valoresDeMatrizB.clear();
     }
 
+    /*
+     * Establece el valor de las dimensiones de las matrices
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -105,6 +125,9 @@ public final class CtrlSumaMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Imprime el resultado en forma de string dentro de la caja de texto de resultado
+    */
     public void imprimirResultado(int[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
@@ -116,7 +139,10 @@ public final class CtrlSumaMatrices implements ActionListener {
         }
         vo.getjTextAreaResultado().setText(resultado);
     }
-
+    
+    /*
+     * Realiza la operacion de suma de matrices
+    */
     public int[][] resolverSuma() {
         int[][] matrizA = new int[filas][columnas];
         int i = 0, j = 0;
