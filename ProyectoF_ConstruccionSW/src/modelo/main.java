@@ -9,8 +9,8 @@ import controlador.CtrlVistaPrincipal;
 import vista.VistaPrincipal;
 
 /**
- *
- * @author Iván Aguilar
+ * Clase principal
+ * @author Jafet, Victor y Montserrat
  */
 public class main {
 
