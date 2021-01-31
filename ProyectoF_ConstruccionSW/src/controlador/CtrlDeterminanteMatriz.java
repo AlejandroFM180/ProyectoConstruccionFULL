@@ -80,6 +80,9 @@ public class CtrlDeterminanteMatriz implements ActionListener {
         }
     }
     
+    /*
+     * Este método vacía las celdas que conformas la matriz y elimina los valores insertados en la matriz
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
