@@ -8,7 +8,7 @@ package modelo;
 /**
  * Esta clase contiene todos los métodos para realizar la multiplicación de una matriz por un escalar.
  * @version 1.2
- * @author Montserrat Bustamante Rentería
+ * @author Montserrat, Jafet y Victor
  */
 public class EscalarMatrices {
     

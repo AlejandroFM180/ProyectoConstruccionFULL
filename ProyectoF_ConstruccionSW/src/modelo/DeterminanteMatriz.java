@@ -7,7 +7,7 @@ package modelo;
 
 /**
  * Esta clase calcula la determinante de una matriz
- * @author Los chidos
+ * @author Montserrat, Jafet y Victor
  */
 public class DeterminanteMatriz {
     /*

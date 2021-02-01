@@ -14,7 +14,7 @@ package modelo;
  */
 public class InversaMatrizGauss {
     /*
-     * 
+     * Realiza la operación de obtener la matriz invertida 
     */
     public double[][] obtenerInversa(double matriz[][]) {
         
@@ -35,6 +35,9 @@ public class InversaMatrizGauss {
         return matrizRespuesta;
     }
     
+    /*
+     * Método Gauss-Jordan para obtener la matriz invertida
+    */
     public static void gaussJordan(double matriz[][], int ordenPivote[]){
         int largoPivote = ordenPivote.length;
         double factorEscala[] = new double[largoPivote];
@@ -80,6 +83,10 @@ public class InversaMatrizGauss {
         }
     }
     
+    /*
+     * Invierte la matriz ingresada por el usuario, utilizando las funciones anteriores.
+     * @matrizRespuesta Una matriz de números de tipo double
+    */
     public static double[][] invertirMatriz(double matriz[][], double matrizIdentidad[][] , int ordenPivote[], int dimensionMatriz) {
         for (int contadorDimension=0; contadorDimension<dimensionMatriz-1; contadorDimension++) {
             for (int contDimension=contadorDimension+1; contDimension<dimensionMatriz; contDimension++) {
