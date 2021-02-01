@@ -18,7 +18,7 @@ import vista.VistaOperaciones;
 
 /**
  * Clase controladora de EscalarMatrices
- * @author Montserrat Bustamante Rentería
+ * @author Montserrat, Jafet y Victor
  */
 public final class CtrlEscalarMatrices implements ActionListener {
 
@@ -27,6 +27,9 @@ public final class CtrlEscalarMatrices implements ActionListener {
     private JTextField escalar;
     private int filas, columnas;
 
+    /*
+     * Prepara la vista de operaciones para realizar la multiplicación de matrices por escalar.
+    */
     public CtrlEscalarMatrices(VistaOperaciones vo) {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
@@ -39,6 +42,10 @@ public final class CtrlEscalarMatrices implements ActionListener {
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
 
+    /*
+     * Este método genera la matriz y la celda del escalar para realizar la multiplicación cuando se presiona el botón de Generar matrices.
+     * Si se ingresan datos incorrectos (numeros o quedan espacios vacios), aparecera un mensaje de error.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -57,6 +64,9 @@ public final class CtrlEscalarMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Cambia el título de la vista a "Multiplicación de una matriz por escalar"
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("MULTIPLICACIÓN DE UNA MATRIZ POR ESCALAR");
         vo.getColumnasMatrizB().setVisible(false);
@@ -64,6 +74,10 @@ public final class CtrlEscalarMatrices implements ActionListener {
         vo.getjLabeMatrizB().setText("Escalar");
     }
 
+    /*
+     * Genera las celdas para llenar la matriz con las dimensiones establecidas y una celda para el escalar. Almacena los valores ingresados 
+     * por el usuario en ambos.
+    */
     public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -88,12 +102,18 @@ public final class CtrlEscalarMatrices implements ActionListener {
         vo.getPanelMatrizB().updateUI();
     }
 
+    /*
+     * Vacía las celdas de la matriz.
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
         vo.getPanelMatrizB().removeAll();
     }
 
+    /*
+     * Obtiene el valor de las filas y las columnas de la matriz establecidas por el usuario.
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -104,6 +124,9 @@ public final class CtrlEscalarMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Imprime el resultado de la multiplicación y lo despliega en la caja de texto de resultado.
+    */
     public void imprimirResultado(int[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
@@ -116,6 +139,12 @@ public final class CtrlEscalarMatrices implements ActionListener {
         vo.getjTextAreaResultado().setText(resultado);
     }
 
+    /*
+     * Obtiene los valores ingresados en las celdas y los almacena en la matriz A y obtiene
+     * el valor del escalar ingresado en la celda, convierte los datos a entero y 
+     * llama a la función de la clase EscalarMatrices que realiza la multiplicación.
+     * @return matrizResultante Una matriz de números enteros
+    */
     public int[][] resolverEscalar() {
         int[][] matrizA = new int[filas][columnas];
         int i = 0, j = 0;

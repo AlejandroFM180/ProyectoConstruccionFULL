@@ -10,7 +10,7 @@ package modelo;
 /**
  * Esta clase calcula la inversa de una matriz de dimensiones nxn con el método Gauss-Jordan
  * @version 1.2
- * @author 
+ * @author Montserrat, Jafet y Victor
  */
 public class InversaMatrizGauss {
     /*

@@ -17,8 +17,8 @@ import modelo.InversaMatrizGauss;
 import vista.VistaOperaciones;
 
 /**
- *
- * @author Iván Aguilar
+ * Clase controlador de InversaMatrizGauss
+ * @author Victor, Montserrat y Jafet
  */
 public final class CtrlInversaMatrizGauss implements ActionListener {
 
@@ -26,6 +26,9 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
     private List<JTextField> valoresDeMatrizA;
     private int filas, columnas;
 
+    /*
+     * Prepara la vista de operaciones para realizar la obtención de la inversa de una matriz con el método de Gauss-Jordan.
+    */
     public CtrlInversaMatrizGauss(VistaOperaciones vo) {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
@@ -37,6 +40,10 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
 
+    /*
+     * Este método genera la matriz para realizar el cálculo cuando se presiona el botón de Generar matrices.
+     * Si se ingresan datos incorrectos (numeros o quedan espacios vacios), aparecera un mensaje de error.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -55,6 +62,9 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         }
     }
 
+    /*
+     * Cambia el título de la vista a "Inversa de una matriz (Gauss-Jordan)"
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("INVERSA DE UNA MATRIZ (GAUSS-JORDAN)");
         vo.getColumnasMatrizA().setVisible(false);
@@ -63,6 +73,9 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         vo.getjLabeMatrizB().setText("");
     }
 
+    /*
+     * Genera las celdas para llenar la matriz con las dimensiones establecidas por el usuario. 
+    */
     public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -80,11 +93,17 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         }
     }
 
+    /*
+     * Vacía los valores de las celdas de la matriz.
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
     }
 
+    /*
+     * Obtiene el valor de las filas y las columnas de la matriz establecidas por el usuario.
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -95,6 +114,9 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         }
     }
 
+    /*
+     * Imprime la matriz resultante y lo despliega en la caja de texto de resultado.
+    */
     public void imprimirResultado(double[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
@@ -107,6 +129,10 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         vo.getjTextAreaResultado().setText(resultado);
     }
 
+    /*
+     * Llena la matriz A con los datos ingresados en la celda por el usuario después de convertirlos a números enteros
+     * y llama a la función de la clase InversaMatrizGauss para obtener la inversa.
+    */
     public double[][] resolverInversa() {
         double[][] matrizA = new double[filas][columnas];
         int i = 0, j = 0;

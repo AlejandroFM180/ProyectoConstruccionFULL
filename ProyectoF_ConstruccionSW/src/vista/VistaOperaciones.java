@@ -12,7 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 /**
- *
+ * JFrame que contiene el nombre de la operación, un combobox para seleccionar las dimensiones de las matrices 
+ * y las celdas que llenará el usuario para realizar el cálculo, junto con el botón de resolver y una caja de texto que contendrá el resultado.
  * @author Victor, Jafet y Montserrat
  */
 public class VistaOperaciones extends javax.swing.JFrame {

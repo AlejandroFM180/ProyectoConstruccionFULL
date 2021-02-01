@@ -18,7 +18,7 @@ import vista.VistaOperaciones;
 
 /**
  *
- * @author Iván Aguilar
+ * @author Jafet, Montserrat y Victor
  */
 public final class CtrlMultiplicacionMatrices implements ActionListener {
 
