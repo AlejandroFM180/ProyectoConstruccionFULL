@@ -9,13 +9,13 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 /**
- *
- * @author Iván Aguilar
+ * JFrame que muestra el titulo y el menu para seleccionar la operacion a realizar
+ * @author Jafet, Victor y Montserrat
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaPrincipal
+     * Crea nueva VistaPrincipal
      */
     public VistaPrincipal() {
         initComponents();

@@ -12,7 +12,7 @@ import vista.VistaPrincipal;
 
 /**
  *
- * @author VictorEnrique
+ * @author Victor, Jafet y Montserrat
  */
 public class CtrlVistaOperaciones implements ActionListener {
     private VistaOperaciones vo;

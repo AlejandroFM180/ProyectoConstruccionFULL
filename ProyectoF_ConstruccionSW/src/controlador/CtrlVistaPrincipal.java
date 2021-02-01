@@ -12,8 +12,8 @@ import vista.VistaOperaciones;
 import vista.VistaPrincipal;
 
 /**
- *
- * @author lol
+ * Esta clase es el controlador de la vista principal
+ * @author Victor, Montserrat y Jafet
  */
 public class CtrlVistaPrincipal implements ActionListener {
 
