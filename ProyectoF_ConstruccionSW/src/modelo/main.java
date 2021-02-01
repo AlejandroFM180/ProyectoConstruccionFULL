@@ -9,8 +9,8 @@ import controlador.CtrlVistaPrincipal;
 import vista.VistaPrincipal;
 
 /**
- *
- * @author Iván Aguilar
+ * Este sistema consiste en una calculadora de matrices que puede realizar varias operaciones.
+ * @author Montserrat, Jafet y Victor
  */
 public class main {
 

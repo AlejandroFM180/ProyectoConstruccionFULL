@@ -20,6 +20,9 @@ public class CtrlVistaPrincipal implements ActionListener {
     private VistaPrincipal vp;
     private VistaOperaciones vo;
 
+    /*
+     * Agrega un listener a la vista principal para el botón de cerrar y la caja para seleccionar operaciones.
+    */
     public CtrlVistaPrincipal(VistaPrincipal vp) {
         this.vp = vp;
 
@@ -27,6 +30,9 @@ public class CtrlVistaPrincipal implements ActionListener {
         vp.getjComboBoxOperaciones().addActionListener(this);
     }
 
+    /*
+     * Abre una ventana de Vista Operaciones con la operación correspondiente que seleccione el usuario.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vp.getjButtonCerrar() == ae.getSource()) {
@@ -50,11 +56,7 @@ public class CtrlVistaPrincipal implements ActionListener {
             CtrlVistaOperaciones cvo = new CtrlVistaOperaciones(vo, vp);
             vo.setVisible(true);
         }
-        /*if (vp.getjComboBoxOperaciones().getSelectedItem().equals("Obtención de la transpuesta de una matriz")) {
-            vo = new VistaOperaciones();
-            CtrlTranspuestaMatriz ctm = new CtrlTranspuestaMatriz(vo);
-            vo.setVisible(true);
-        }*/
+
         if (vp.getjComboBoxOperaciones().getSelectedItem().equals("Obtención de la inversa de una matriz (Gauss)")) {
             vo = new VistaOperaciones();
             CtrlInversaMatrizGauss cim = new CtrlInversaMatrizGauss(vo);

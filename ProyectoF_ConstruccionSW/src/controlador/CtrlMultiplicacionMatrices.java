@@ -17,7 +17,7 @@ import modelo.MultiplicacionMatrices;
 import vista.VistaOperaciones;
 
 /**
- *
+ * Clase controlador de MultiplicacionMatrices
  * @author Jafet, Montserrat y Victor
  */
 public final class CtrlMultiplicacionMatrices implements ActionListener {
@@ -26,6 +26,9 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
     private List<JTextField> valoresDeMatrizA, valoresDeMatrizB;
     private int filasA, columnasA, filasB, columnasB;
 
+    /*
+     * Prepara la vista de operaciones para realizar la multiplicación de matrices.
+    */
     public CtrlMultiplicacionMatrices(VistaOperaciones vo) {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
@@ -38,6 +41,10 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
 
+    /*
+     * Este método genera las matrices para realizar la multiplicación cuando se presiona el botón de Generar matrices.
+     * Si se ingresan datos incorrectos (numeros o quedan espacios vacios), aparecera un mensaje de error.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -56,11 +63,17 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Cambia el título de la vista a "Multiplicación de matrices"
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("MULTIPLICACIÓN DE MATRICES");
         vo.getFilasMatrizB().setVisible(false);
     }
 
+    /*
+     * Genera las celdas para llenar las matrices con las dimensiones establecidas.
+    */
     public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -89,6 +102,9 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Vacía las celdas de las matrices.
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
@@ -96,6 +112,9 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         valoresDeMatrizB.clear();
     }
 
+    /*
+     * Obtiene el valor de las filas y las columnas de las matrices establecidas por el usuario.
+    */
     public void obtenerValoresFilasColumnas() {
         filasA = 1;
         columnasA = 1;
@@ -110,6 +129,9 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         }
     }
 
+    /*
+     * Imprime el resultado de la multiplicación y lo despliega en la caja de texto de resultado.
+    */
     public void imprimirResultado(int[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
@@ -122,6 +144,11 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         vo.getjTextAreaResultado().setText(resultado);
     }
 
+    /*
+     * Obtiene los valores ingresados en las celdas y los almacena en la matriz A  y la matriz B,
+     * convierte los datos a entero y llama a la función de la clase MultiplicacionMatrices que realiza la multiplicación.
+     * @return matrizResultante Una matriz de números enteros
+    */
     public int[][] resolverMultiplicacion() {
         int[][] matrizA = new int[filasA][columnasA];
         int i = 0, j = 0;

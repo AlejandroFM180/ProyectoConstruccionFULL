@@ -26,6 +26,9 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
     private List<JTextField> valoresDeMatrizA;
     private int filas, columnas;
 
+    /*
+     * Prepara la vista de operaciones para realizar la resolución del sistema de ecuaciones.
+    */
     public CtrlSistemaEcuaciones(VistaOperaciones vo) {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
@@ -37,6 +40,10 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
 
+    /*
+     *  Este método genera la matriz para realizar el cálculo cuando se presiona el botón de Generar matrices.
+     * Si se ingresan datos incorrectos (numeros o quedan espacios vacios), aparecera un mensaje de error.
+    */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
@@ -55,6 +62,9 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         }
     }
 
+    /*
+     * Cambia el título de la vista a "Sistema de Ecuaciones (Gauss-Jordan)"
+    */
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("SISTEMA DE ECUACIONES (GAUSS-JORDAN)");
         vo.getColumnasMatrizA().setVisible(false);
@@ -63,6 +73,9 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         vo.getjLabeMatrizB().setText("");
     }
 
+    /*
+     * Genera las celdas para llenar la matriz con las dimensiones establecidas.
+    */
     public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
@@ -80,11 +93,17 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         }
     }
 
+    /*
+     * Vacía las celdas de la matriz.
+    */
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
     }
 
+    /*
+     * Obtiene el valor de las filas y las columnas de la matriz establecidas por el usuario.
+    */
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -95,6 +114,9 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         }
     }
 
+    /*
+     * Si el valor de las variables existe, se desplegará en una ventana emergente y se imprimirá dentro de la caja de texto de resultado.
+    */
     public void imprimirResultado(String valorDeVariables) {
         if(valorDeVariables != ""){
             JOptionPane.showMessageDialog(vo, valorDeVariables);
@@ -102,6 +124,11 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         vo.getjTextAreaResultado().setText(valorDeVariables);
     }
 
+    /*
+     * Obtiene los valores ingresados en las celdas y los almacena en la matriz A, convierte los datos a entero y 
+     * llama a la función de la clase SistemaEcuaciones que realiza el cálculo.
+     * @return valorDeVariables Un string
+    */
     public String resolverSistema() {
         float[][] matrizA = new float[filas][columnas];
         int i = 0, j = 0;

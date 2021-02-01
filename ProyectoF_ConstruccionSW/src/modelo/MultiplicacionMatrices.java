@@ -9,7 +9,7 @@ package modelo;
 /**
  * Esta clase realiza la multiplicación de dos matrices: A de dimensiones mxn y B de dimensiones nxp
  * @version 1.2
- * @author 
+ * @author Victor, Montserrat y Jafet
  */
 public class MultiplicacionMatrices {
 
