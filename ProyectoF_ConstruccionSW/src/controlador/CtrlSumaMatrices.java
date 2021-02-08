@@ -128,12 +128,12 @@ public final class CtrlSumaMatrices implements ActionListener {
     /*
      * Imprime el resultado en forma de string dentro de la caja de texto de resultado
     */
-    public void imprimirResultado(int[][] matrizResultante) {
+    public void imprimirResultado(double[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                resultado += "          " + matrizResultante[i][j] + "  ";
+                resultado += "          " + String.format("%.2f", matrizResultante[i][j]) + "  ";
             }
             resultado += "\n";
         }
@@ -143,19 +143,19 @@ public final class CtrlSumaMatrices implements ActionListener {
     /*
      * Realiza la operacion de suma de matrices
     */
-    public int[][] resolverSuma() {
-        int[][] matrizA = new int[filas][columnas];
+    public double[][] resolverSuma() {
+        double[][] matrizA = new double[filas][columnas];
         int i = 0, j = 0;
         for (JTextField valorMatrizA : valoresDeMatrizA) {
             if (j == columnas) {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             j++;
         }
 
-        int[][] matrizB = new int[filas][columnas];
+        double[][] matrizB = new double[filas][columnas];
         i = 0;
         j = 0;
         for (JTextField valorMatrizB : valoresDeMatrizB) {
@@ -163,11 +163,11 @@ public final class CtrlSumaMatrices implements ActionListener {
                 i++;
                 j = 0;
             }
-            matrizB[i][j] = Integer.parseInt(valorMatrizB.getText());
+            matrizB[i][j] = Double.parseDouble(valorMatrizB.getText());
             j++;
         }
 
-        int[][] matrizResultante;
+        double[][] matrizResultante;
         SumaMatrices suma = new SumaMatrices();
         matrizResultante = suma.sumarMatriz(matrizA, matrizB);
         return matrizResultante;

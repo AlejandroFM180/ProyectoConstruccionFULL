@@ -47,7 +47,7 @@ public class EcuacionesCramer {
         }
 
         for (int i = 0; i < Rcramer.length; i++) {
-            respuesta += "La variable X" + (i + 1) + " es: " + Rcramer[i] + "\n";
+            respuesta += "La variable X" + (i + 1) + " es: " + String.format("%.2f", Rcramer[i]) + "\n";
         }
 
         return respuesta; //Retorna el String de soluciones de Xn

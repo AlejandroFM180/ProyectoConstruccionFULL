@@ -132,12 +132,12 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
     /*
      * Imprime el resultado de la multiplicación y lo despliega en la caja de texto de resultado.
     */
-    public void imprimirResultado(int[][] matrizResultante) {
+    public void imprimirResultado(double[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
         for (int i = 0; i < filasA; i++) {
             for (int j = 0; j < columnasB; j++) {
-                resultado += "          " + matrizResultante[i][j] + "  ";
+                resultado += "          " + String.format("%.2f", matrizResultante[i][j]) + "  ";
             }
             resultado += "\n";
         }
@@ -149,19 +149,19 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
      * convierte los datos a entero y llama a la función de la clase MultiplicacionMatrices que realiza la multiplicación.
      * @return matrizResultante Una matriz de números enteros
     */
-    public int[][] resolverMultiplicacion() {
-        int[][] matrizA = new int[filasA][columnasA];
+    public double [][] resolverMultiplicacion() {
+        double[][] matrizA = new double[filasA][columnasA];
         int i = 0, j = 0;
         for (JTextField valorMatrizA : valoresDeMatrizA) {
             if (j == columnasA) {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             j++;
         }
 
-        int[][] matrizB = new int[filasB][columnasB];
+        double[][] matrizB = new double[filasB][columnasB];
         i = 0;
         j = 0;
         for (JTextField valorMatrizB : valoresDeMatrizB) {
@@ -169,11 +169,11 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
                 i++;
                 j = 0;
             }
-            matrizB[i][j] = Integer.parseInt(valorMatrizB.getText());
+            matrizB[i][j] = Double.parseDouble(valorMatrizB.getText());
             j++;
         }
 
-        int[][] matrizResultante;
+        double[][] matrizResultante;
         MultiplicacionMatrices multiplicacion = new MultiplicacionMatrices();
         matrizResultante = multiplicacion.multiplicarMatriz(matrizA, matrizB);
         return matrizResultante;

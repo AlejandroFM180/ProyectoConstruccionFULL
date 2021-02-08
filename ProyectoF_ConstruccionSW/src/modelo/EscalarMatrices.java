@@ -19,12 +19,12 @@ public class EscalarMatrices {
      * @param escalar Un número entero.
      * @return matrizResultado Matriz de números enteros resultado de matriz * escalar
     */
-    public int[][] escalarMatriz(int[][] matriz , int escalar) {
-        int[][] matrizResultado;
+    public double[][] escalarMatriz(double[][] matriz , double escalar) {
+        double[][] matrizResultado;
         int numFilas = matriz.length;
         int numColumnas = matriz[0].length;
         
-        matrizResultado = new int[numFilas][numColumnas];
+        matrizResultado = new double[numFilas][numColumnas];
         // Llena matrizResultado con el resultado de la multiplicacion de cada elemento de la matriz original por el escalar.
         for (int i = 0; i < numFilas; i++) {
             for (int j = 0; j < numColumnas; j++) {
@@ -40,7 +40,7 @@ public class EscalarMatrices {
      * @param matrizTittle 
      * @param matriz Matriz resultante de la multiplicación
     */
-    private void imprimeMatriz (String matrizTittle, int[][] matriz){
+    private void imprimeMatriz (String matrizTittle, double[][] matriz){
         int filas = matriz.length;
         int columnas = matriz[0].length;
         System.out.println(matrizTittle);

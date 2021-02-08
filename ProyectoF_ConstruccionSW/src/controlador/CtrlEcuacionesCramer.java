@@ -138,9 +138,9 @@ public class CtrlEcuacionesCramer implements ActionListener {
             }
 
             if (j != columnas - 1) {
-                matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+                matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             } else {
-                arrayB[i] = Integer.parseInt(valorMatrizA.getText());
+                arrayB[i] = Double.parseDouble(valorMatrizA.getText());
             }
             j++;
         }

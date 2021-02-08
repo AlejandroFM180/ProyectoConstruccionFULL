@@ -17,8 +17,8 @@ public class SumaMatrices {
      * @param matrizB Una matriz de tipo entero
      * @return matrizResultado Una matriz de tipo entero
     */
-    public int[][] sumarMatriz(int[][] matrizA , int[][] matrizB) {
-        int[][] matrizResultado;
+    public double[][] sumarMatriz(double[][] matrizA , double[][] matrizB) {
+        double[][] matrizResultado;
         int numFilasA = matrizA.length;
         int numColumnasA = matrizA[0].length;
 
@@ -28,7 +28,7 @@ public class SumaMatrices {
         
         if (numFilasA==filasB && columnasB==numColumnasA) {
 
-            matrizResultado = new int[numFilasA][numColumnasA];
+            matrizResultado = new double[numFilasA][numColumnasA];
             for (int i = 0; i < numFilasA; i++) {
                 for (int j = 0; j < numColumnasA; j++) {
                     matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j];

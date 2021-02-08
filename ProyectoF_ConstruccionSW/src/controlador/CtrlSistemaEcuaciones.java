@@ -137,7 +137,7 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Float.parseFloat(valorMatrizA.getText());
             j++;
         }
 

@@ -20,10 +20,10 @@ public class MultiplicacionMatrices {
      * @param matrizB Matriz de números enteros.
      * @return matrizResultado Resultado dem la multiplicación de ambas matrices.
     */
-    public int[][] multiplicarMatriz(int[][] matrizA, int[][] matrizB) { 
+    public double[][] multiplicarMatriz(double[][] matrizA, double[][] matrizB) { 
         int filasA = matrizA.length;
         int columnasB = matrizB[0].length;  
-        int[][] matrizResultado = new int[filasA][columnasB];
+        double[][] matrizResultado = new double[filasA][columnasB];
 
         int columnasA = matrizA[0].length;
         int filasB = matrizB.length;

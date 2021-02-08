@@ -122,7 +122,7 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
         String resultado = "";
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                resultado += "          " + matrizResultante[i][j] + "  ";
+                resultado += "          " + String.format("%.2f", matrizResultante[i][j]) + "  ";
             }
             resultado += "\n";
         }
@@ -141,7 +141,7 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             j++;
         }
 

@@ -127,12 +127,12 @@ public final class CtrlEscalarMatrices implements ActionListener {
     /*
      * Imprime el resultado de la multiplicación y lo despliega en la caja de texto de resultado.
     */
-    public void imprimirResultado(int[][] matrizResultante) {
+    public void imprimirResultado(double[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                resultado += "          " + matrizResultante[i][j] + "  ";
+                resultado += "          " + String.format("%.2f", matrizResultante[i][j]) + "  ";
             }
             resultado += "\n";
         }
@@ -145,20 +145,20 @@ public final class CtrlEscalarMatrices implements ActionListener {
      * llama a la función de la clase EscalarMatrices que realiza la multiplicación.
      * @return matrizResultante Una matriz de números enteros
     */
-    public int[][] resolverEscalar() {
-        int[][] matrizA = new int[filas][columnas];
+    public double[][] resolverEscalar() {
+        double[][] matrizA = new double[filas][columnas];
         int i = 0, j = 0;
         for (JTextField valorMatrizA : valoresDeMatrizA) {
             if (j == columnas) {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             j++;
         }
 
-        int[][] matrizResultante;
-        int valorEscalar = Integer.parseInt(escalar.getText());
+        double[][] matrizResultante;
+        double valorEscalar = Double.parseDouble(escalar.getText());
         EscalarMatrices escalar = new EscalarMatrices();
         matrizResultante = escalar.escalarMatriz(matrizA, valorEscalar);
         return matrizResultante;

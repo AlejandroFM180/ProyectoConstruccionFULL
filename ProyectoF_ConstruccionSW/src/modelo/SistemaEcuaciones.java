@@ -58,7 +58,7 @@ public class SistemaEcuaciones {
         }  
         String respuesta = "";
         for (int i = 0; i < variable; i++) {
-            respuesta += "La variable x" + (i + 1) + " es: " + matriz[i][variable] + "\n";
+            respuesta += "La variable x" + (i + 1) + " es: " + String.format("%.2f", matriz[i][variable]) + "\n";
         }
         return respuesta;
     }

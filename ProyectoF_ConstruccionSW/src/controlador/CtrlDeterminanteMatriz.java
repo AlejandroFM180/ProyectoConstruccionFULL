@@ -120,7 +120,7 @@ public class CtrlDeterminanteMatriz implements ActionListener {
      * Este método imprime el determinante de la matriz. Toma el valor de determinante
     */
     public void imprimirResultado(double determinanteResultante) {
-        String strDeterminante = String.valueOf(determinanteResultante);
+        String strDeterminante = String.valueOf(String.format("%.2f", determinanteResultante));
         JOptionPane.showMessageDialog(vo, "El determinante es igual a: " + strDeterminante);
         vo.getjTextAreaResultado().setText(strDeterminante);
     }
@@ -137,7 +137,7 @@ public class CtrlDeterminanteMatriz implements ActionListener {
                 i++;
                 j = 0;
             }
-            matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
+            matrizA[i][j] = Double.parseDouble(valorMatrizA.getText());
             j++; 
         } 
         
