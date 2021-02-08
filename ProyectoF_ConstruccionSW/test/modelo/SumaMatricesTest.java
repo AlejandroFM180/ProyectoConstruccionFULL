@@ -43,11 +43,11 @@ public class SumaMatricesTest {
     @Test
     public void testSumarMatriz() {
         System.out.println("sumarMatriz");
-        int[][] matrizA = {{3,1},{5,5}};
-        int[][] matrizB = {{2,2},{3,5}};
+        double[][] matrizA = {{3,1},{5,5}};
+        double[][] matrizB = {{2,2},{3,5}};
         SumaMatrices instance = new SumaMatrices();
-        int[][] expResult = {{5,3},{8,10}};
-        int[][] result = instance.sumarMatriz(matrizA, matrizB);
+        double[][] expResult = {{5,3},{8,10}};
+        double[][] result = instance.sumarMatriz(matrizA, matrizB);
         /*System.out.println(expResult.length);
         for (int i = 0; i < expResult.length; i++) {
             for (int j = 0; j < expResult.length; j++) {

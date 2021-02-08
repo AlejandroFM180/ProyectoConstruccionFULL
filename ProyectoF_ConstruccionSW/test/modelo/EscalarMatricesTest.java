@@ -43,11 +43,11 @@ public class EscalarMatricesTest {
     @Test
     public void testEscalarMatriz() {
         System.out.println("escalarMatriz");
-        int[][] matriz = {{3,4,5},{4,5,2},{1,4,5}};
-        int escalar = 5;
+        double[][] matriz = {{3,4,5},{4,5,2},{1,4,5}};
+        double escalar = 5;
         EscalarMatrices instance = new EscalarMatrices();
-        int[][] expResult = {{15,20,25},{20,25,10},{5,20,25}};
-        int[][] result = instance.escalarMatriz(matriz, escalar);
+        double[][] expResult = {{15,20,25},{20,25,10},{5,20,25}};
+        double[][] result = instance.escalarMatriz(matriz, escalar);
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){

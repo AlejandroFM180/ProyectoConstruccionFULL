@@ -43,11 +43,11 @@ public class MultiplicacionMatricesTest {
     @Test
     public void testMultiplicarMatriz() {
         System.out.println("multiplicarMatriz");
-        int[][] matrizA = {{2,3},{2,3},{2,3}};
-        int[][] matrizB = {{2,2,2},{3,3,3}};
+        double[][] matrizA = {{2,3},{2,3},{2,3}};
+        double[][] matrizB = {{2,2,2},{3,3,3}};
         MultiplicacionMatrices instance = new MultiplicacionMatrices();
-        int[][] expResult = {{13,13,13},{13,13,13},{13,13,13}};
-        int[][] result = instance.multiplicarMatriz(matrizA, matrizB);
+        double[][] expResult = {{13,13,13},{13,13,13},{13,13,13}};
+        double[][] result = instance.multiplicarMatriz(matrizA, matrizB);
         System.out.println(expResult.length);
         /*for (int i = 0; i < expResult.length; i++) {
             for (int j = 0; j < expResult.length; j++) {
